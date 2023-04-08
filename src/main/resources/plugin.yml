@@ -1,0 +1,7 @@
+name: Build-Battle-Clan-Stats
+version: ${project.version}
+author: Simonsator
+depends: [ Clans ]
+depend: [ Clans ]
+main: de.simonsator.partyandfriends.clan.stats.buildbattle.SPStatMain
+description: Provides stats for Clans for Build Battle
