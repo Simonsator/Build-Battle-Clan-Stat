@@ -1,7 +1,6 @@
-package de.simonsator.partyandfriends.clan.stats.buildbattle;
+package de.simonsator.partyandfriends.velocty.clan.stats.buildbattle;
 
-
-import de.simonsator.partyandfriends.communication.sql.SQLCommunication;
+import de.simonsator.partyandfriends.velocity.communication.sql.SQLCommunication;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

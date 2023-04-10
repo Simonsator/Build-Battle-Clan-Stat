@@ -1,8 +1,8 @@
-package de.simonsator.partyandfriends.clan.stats.buildbattle;
+package de.simonsator.partyandfriends.velocty.clan.stats.buildbattle;
 
-import de.simonsator.partyandfriends.api.PAFExtension;
-import de.simonsator.partyandfriends.utilities.Language;
-import de.simonsator.partyandfriends.utilities.LanguageConfiguration;
+import de.simonsator.partyandfriends.velocity.api.PAFExtension;
+import de.simonsator.partyandfriends.velocity.utilities.Language;
+import de.simonsator.partyandfriends.velocity.utilities.LanguageConfiguration;
 
 import java.io.File;
 import java.io.IOException;
