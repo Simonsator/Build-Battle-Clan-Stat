@@ -1,5 +1,4 @@
-package de.simonsator.partyandfriends.clan.stats.buildbattle;
-
+package de.simonsator.partyandfriends.velocty.clan.stats.buildbattle;
 
 public class PlayerData {
 	public final double winLoseRatio;

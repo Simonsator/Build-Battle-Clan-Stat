@@ -1,10 +1,10 @@
-package de.simonsator.partyandfriends.clan.stats.buildbattle;
+package de.simonsator.partyandfriends.velocty.clan.stats.buildbattle;
 
-import de.simonsator.partyandfriends.api.pafplayers.OnlinePAFPlayer;
-import de.simonsator.partyandfriends.api.pafplayers.PAFPlayer;
-import de.simonsator.partyandfriends.clan.api.Clan;
-import de.simonsator.partyandfriends.clan.api.ClanStat;
-import de.simonsator.partyandfriends.utilities.ConfigurationCreator;
+import de.simonsator.partyandfriends.velocity.api.pafplayers.OnlinePAFPlayer;
+import de.simonsator.partyandfriends.velocity.api.pafplayers.PAFPlayer;
+import de.simonsator.partyandfriends.velocity.clan.api.Clan;
+import de.simonsator.partyandfriends.velocity.clan.api.ClanStat;
+import de.simonsator.partyandfriends.velocity.utilities.ConfigurationCreator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,9 +37,9 @@ public class SPStat implements ClanStat {
 		kds /= playerData.size();
 		if (kds != kds)
 			kds = 0.0D;
-		pSender.sendMessage(this.MESSAGES_CONFIG.getString("ClanStats.WinsLoseRatio").replace("[WinsLosesRatio]", Math.round(kds * 100.0) / 100.0 + ""));
-		pSender.sendMessage(this.MESSAGES_CONFIG.getString("ClanStats.Wins").replace("[WINS]", kills + ""));
-		pSender.sendMessage(this.MESSAGES_CONFIG.getString("ClanStats.Loses").replace("[LOSES]", deaths + ""));
+		pSender.sendMessage(this.MESSAGES_CONFIG.getString("ClanStats.WinsLoseRatio").replace("[WinsLosesRatio]", String.valueOf(Math.round(kds * 100.0) / 100.0)));
+		pSender.sendMessage(this.MESSAGES_CONFIG.getString("ClanStats.Wins").replace("[WINS]", String.valueOf(kills)));
+		pSender.sendMessage(this.MESSAGES_CONFIG.getString("ClanStats.Loses").replace("[LOSES]", String.valueOf(deaths)));
 	}
 
 	public String getName() {

@@ -1,16 +1,21 @@
-package de.simonsator.partyandfriends.clan.stats.buildbattle;
+package de.simonsator.partyandfriends.velocty.clan.stats.buildbattle;
 
-import de.simonsator.partyandfriends.api.PAFExtension;
-import de.simonsator.partyandfriends.clan.commands.ClanCommands;
-import de.simonsator.partyandfriends.clan.commands.subcommands.Stats;
-import de.simonsator.partyandfriends.utilities.ConfigurationCreator;
-import de.simonsator.partyandfriends.utilities.Language;
+import de.simonsator.partyandfriends.velocity.api.PAFExtension;
+import de.simonsator.partyandfriends.velocity.clan.commands.ClanCommands;
+import de.simonsator.partyandfriends.velocity.clan.commands.subcommands.Stats;
+import de.simonsator.partyandfriends.velocity.utilities.ConfigurationCreator;
+import de.simonsator.partyandfriends.velocity.utilities.Language;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 
 public class SPStatMain extends PAFExtension {
 	private ConfigurationCreator config;
+
+	public SPStatMain(Path folder) {
+		super(folder);
+	}
 
 	public void onEnable() {
 		ConfigurationCreator messagesConfig = null;
@@ -23,5 +28,10 @@ public class SPStatMain extends PAFExtension {
 		SPConnection connection = new SPConnection(this.config.getString("database.db"), "jdbc:mysql://" + this.config.getString("database.host") + ":" + this.config.getInt("database.port"), this.config.getString("database.user"), this.config.getString("database.password"), config.getBoolean("database.ssl"));
 		((Stats) ClanCommands.getInstance().getSubCommand(Stats.class)).registerClanStats(new SPStat(connection, messagesConfig), this);
 		registerAsExtension();
+	}
+
+	@Override
+	public String getName() {
+		return "BuildBattleStats";
 	}
 }
